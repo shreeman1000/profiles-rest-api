@@ -39,8 +39,9 @@ class UserProfile(AbstractBaseUser, PermissionsMixin):
 
     objects = UserProfileManager()
     USERNAME_FIELD = 'email'
-    #USERNAME_FIELD is req to be in caps and is required to login
-    req_fields = ['name']
+    #USERNAME_FIELD is req to be in caps and is required to login same
+    #with req fields
+    REQUIRED_FIELDS = ['name']
 
     def get_full_name(self):
         '''Retrieve Full Name of User'''
